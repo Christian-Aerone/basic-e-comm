@@ -96,8 +96,9 @@ export default class App extends Component {
 
   render() {
     return (
+      
       <div>
-        <NavBar cartTotal = {this.cartTotal()}/>
+        <NavBar cartTotal = {this.cartTotal( )}/>
         <div className="container">
           <Catalog
             items={this.state.items}

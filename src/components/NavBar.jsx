@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 export default class NavBar extends Component {
   render() {
     return (
@@ -17,7 +17,7 @@ export default class NavBar extends Component {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a class="nav-link" href="CartPage.jsx">
                   Cart
                   <span>
                     {this.props.cartTotal > 0 && (
