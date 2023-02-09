@@ -21,7 +21,7 @@ export default class NavBar extends Component {
                   Cart
                   <span>
                     {this.props.cartTotal > 0 && (
-                      <span className="badge bg-secondary ms-2">
+                      <span className="badge bg-danger ms-2">
                         {this.props.cartTotal}
                       </span>
                     )}
