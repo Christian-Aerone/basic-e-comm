@@ -3,16 +3,17 @@ import ItemBox from "./ItemBox";
 
 export default class Catalog extends Component {
   render() {
-    const { onDeleteItem, onAddItem, onSubtractItem, items } = this.props;
+    const { onClearItem, onAddItem, onSubtractItem, onAddToCart, items } = this.props;
 
     return (
       <div>
         
         {items.map((item) => (
           <ItemBox
-            onDeleteItem={onDeleteItem}
+            onClearItem={onClearItem}
             onAddItem={onAddItem}
             onSubtractItem={onSubtractItem}
+            onAddToCart = {onAddToCart}
             item = {item}
             key={item.id}
           />
