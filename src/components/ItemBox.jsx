@@ -31,19 +31,19 @@ const ItemBox = ({
       <div className="container text-center">
         <div className="row">
           <div>
-            <img src={itemImg()} alt="t-shirt"></img>
+            <img src={itemImg()} alt="t-shirt" className="p-5"></img>
           </div>
-          <div>
+          <div className="p-2">
             <span>
-              <strong>{itemName()}</strong>
+              <h1>{itemName()}</h1>
             </span>
           </div>
-          <div>
+          <div className="p-3">
             <span>
-              <em>{itemDescription()}</em>
+              <h7><em>{itemDescription()}</em></h7>
             </span>
           </div>
-          <div>
+          <div className="p-4">
             <span>Quantity: {itemQty()}</span>
           </div>
         </div>
