@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
   return (
@@ -11,12 +12,12 @@ const NavBar = (props) => {
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to="/catalog">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="CartPage.jsx">
+              <Link className="nav-link" to="/cart">
                 Cart
                 <span>
                   {props.cartTotal > 0 && (
@@ -25,7 +26,7 @@ const NavBar = (props) => {
                     </span>
                   )}
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
           <span className="navbar-text">Style. Strut. Sustain.</span>

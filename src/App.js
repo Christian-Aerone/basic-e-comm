@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Catalog from "./components/Catalog";
 import NavBar from "./components/NavBar";
+import CartPage from "./components/CartPage";
+import { NotFound } from "./components/NotFound";
+import { ItemDetails } from "./components/ItemDetails";
 
-const App = () => {
+function App() {
   const [items, setItems] = useState([
     {
       id: 1,
@@ -97,19 +101,41 @@ const App = () => {
   };
 
   return (
-    <div>
+    <>
       <NavBar cartTotal={cartTotal()} />
       <div className="container">
-        <Catalog
-          items={items}
-          onClearItem={handleClearItem}
-          onAddItem={handleAddItem}
-          onSubtractItem={handleSubtractItem}
-          onAddToCart={handleAddToCart}
-        />
+        <Routes>
+          <Route path="/" element={<Navigate to="/catalog" />} />
+          <Route
+            path="/catalog"
+            element={
+              <Catalog
+                items={items}
+                onClearItem={handleClearItem}
+                onAddItem={handleAddItem}
+                onSubtractItem={handleSubtractItem}
+                onAddToCart={handleAddToCart}
+              />
+            }
+          />
+          <Route path="/cart" element={<CartPage />} />
+          <Route
+            path="/catalog/:id"
+            element={
+              <ItemDetails
+                items={items}
+                onClearItem={handleClearItem}
+                onAddItem={handleAddItem}
+                onSubtractItem={handleSubtractItem}
+                onAddToCart={handleAddToCart}
+              />
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
-    </div>
+    </>
   );
-};
+}
 
 export default App;

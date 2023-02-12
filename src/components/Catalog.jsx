@@ -8,6 +8,7 @@ const Catalog = ({
   onAddToCart,
   items,
 }) => {
+  console.log("catalog page rendered");
   return (
     <div>
       {items.map((item) => (
