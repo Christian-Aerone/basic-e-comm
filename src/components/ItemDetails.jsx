@@ -13,13 +13,16 @@ export const ItemDetails = ({
     return item.title;
   };
   const itemDescription = () => {
-    return item.body;
+    return item.description;
   };
   const itemQty = () => {
     return item.qty;
   };
   const itemImg = () => {
     return item.img;
+  };
+  const itemPrice = () => {
+    return item.price;
   };
   return (
     <div className="container text-center">
@@ -37,6 +40,13 @@ export const ItemDetails = ({
             <h7>
               <em>{itemDescription()}</em>
             </h7>
+          </span>
+        </div>
+        <div>
+          <span>
+            <h4>
+              Php {itemPrice()}
+            </h4>
           </span>
         </div>
         <div className="p-4">
