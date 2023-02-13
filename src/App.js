@@ -108,7 +108,7 @@ function App() {
               />
             }
           />
-          {/* <Route path="/newItem" element={<AddItem />} /> */}
+          <Route path="/newItem" element={<AddItem />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

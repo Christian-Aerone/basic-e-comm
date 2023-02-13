@@ -1,13 +1,14 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class CartPage extends Component {
   render() {
     console.log("cart page rendered");
     return (
       <>
-        <div className="container text-center">
+        <Link className="container text-center" to="/newItem">
           <button className="btn btn-outline-success ms-4">Add Item</button>
-        </div>
+        </Link>
 
         
       </>
